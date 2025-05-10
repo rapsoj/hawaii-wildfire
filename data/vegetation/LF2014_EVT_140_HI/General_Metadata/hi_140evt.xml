@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey</origin>
+        <pubdate>20161031</pubdate>
+        <title>LANDFIRE.HI_140EVT</title>
+        <geoform>map</geoform>
+        <serinfo>
+          <sername>LANDFIRE Existing Vegetation Type</sername>
+          <issue>LANDFIRE 2014 (lf_1.4.0)</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>47914 252nd St., Sioux Falls, SD, 57198-0001, US</pubplace>
+          <publish>Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey</publish>
+        </pubinfo>
+        <othercit>United States Forest Service</othercit>
+        <onlink>http://landfire.cr.usgs.gov/viewer/</onlink>
+        <onlink>http://www.landfire.gov</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Introduction: The LANDFIRE existing vegetation layers describe the following elements of existing vegetation for each LANDFIRE mapping zone: existing vegetation type, existing vegetation canopy cover, and existing vegetation height. Vegetation is mapped using predictive landscape models based on extensive field reference data, satellite imagery, biophysical gradient layers, and classification and regression trees. DATA SUMMARY: The existing vegetation type (EVT) data layer represents the current distribution of the terrestrial ecological systems classification developed by NatureServe for the western Hemisphere (http://www.natureserve.org/publications/usEcologicalsystems.jsp). A terrestrial ecological system is defined as a group of plant community types (associations) that tend to co-occur within landscapes with similar ecological processes, substrates, and/or environmental gradients. EVTs are mapped in LANDFIRE using decision tree models, field reference data, Landsat imagery, digital elevation model data, and biophysical gradient data. Go to http://www.landfire.gov/participate_acknowledgements.php for more information regarding contributors of field plot data. Decision tree models are developed separately for each of the three life-forms -tree, shrub, and herbaceous - using C5 software. Life-form specific cross validation error matrices are generated during this process to assess levels of accuracy of the models. Decision tree relationships are then used to generate life-form specific EVT spatial data layers. The final EVT and Environmental Site Potential (ESP) layers are compared and rectified through a series of QA/QC measures. Values of one or more of these data layers are adjusted based on a hierarchical decision tree ruleset in order to align the respective life-forms and life-zone of each ESP and EVT category. The EVT layer is used in many subsequent LANDFIRE data layers. LF 2014 (lf_1.4.0) used modified LF 2010 (lf_1.2.0) data as a launching point to incorporate disturbance and its severity, both managed and natural, which occurred on the landscape 2013 and 2014. Specific examples of disturbance are: fire, vegetation management, weather, and insect and disease. The final disturbance data used in LANDFIRE is the result of several efforts that include data derived in part from remotely sensed land change methods, Monitoring Trends in Burn Severity (MTBS), and the LANDFIRE Events data call. Vegetation growth was modeled where both disturbance and non-disturbance occurs.Urban, agriculture, and wetlands were refined to reflect a 2012 landscape using the National Conservation Easement Database, National Wetlands Inventory (NWI), and Common Land Unit database (CLU) data.</abstract>
+      <purpose>LANDFIRE data products are designed to facilitate national- and regional-level strategic planning and reporting of management activities. Data products are created at a 30-meter grid spatial resolution raster data set; however, the applicability of data products varies by location and specific use. Principal purposes of the data products include providing, 1) national-level, landscape-scale geospatial products to support fire and fuels management planning, and, 2) consistent fuels data to support fire planning, analysis, and budgeting to evaluate fire management alternatives. Users are advised to evaluate the data carefully for their applications.</purpose>
+      <supplinf>Four attributes are provided in which LANDFIRE EVTs have been cross-walked to existing vegetation classifications. These attributes are provided to help characterize and describe the LANDFIRE EVTs nationally in terms of these existing vegetation classifications but should not be used to create coarser, thematically simplified maps as they encompass a large amount of local variation. The Order, Class, and Subclass attributes are based on the Federal Geographic Data Committee - Vegetation Subcommittee's vegetation classification standard and pertain to upper physiognomic levels of the National Vegetation Classification System hierarchy. Order describes the dominant life forms (tree, shrub, dwarf shrub, herbaceous, or nonvascular) within the Vegetated Division of the hierarchy. Class describes the level in the classification hierarchy defined by the relative percent canopy cover of the tree, shrub, dwarf shrub, herb, and nonvascular life form in the uppermost strata during the peak of the growing season. Subclass describes the predominant leaf phenology of classes defined by tree, shrub, or dwarf shrub stratum (evergreen, deciduous, mixed evergreen-deciduous), and the average vegetation height for the herbaceous stratum (tall, medium, short). In addition to physiognomy, a cross-walk based more on the floristic composition of each EVT is provided using the combined classifications SAF and SRM for forested and rangeland types, respectively. LANDFIRE EVTs that do not apply to these pre-existing categories are cross-walked to coarser, LANDFIRE "cover classes".</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate/>
+          <enddate/>
+        </rngdates>
+      </timeinfo>
+      <current/>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update/>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-160.6050</westbc>
+        <eastbc>-154.7280</eastbc>
+        <northbc>22.2961</northbc>
+        <southbc>18.8399</southbc>
+      </bounding>
+    </spdom>
+    <keywords/>
+    <accconst/>
+    <useconst/>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper/>
+        </cntperp>
+        <cntaddr>
+          <addrtype/>
+          <address/>
+          <city/>
+          <state/>
+          <postal/>
+        </cntaddr>
+        <cntvoice/>
+      </cntinfo>
+    </ptcontac>
+    <secinfo>
+			<secsys>None in place</secsys>
+			<secclass>Unclassified</secclass>
+			<sechandl>If there is ever doubt, contact the appropriate resource staff who has stewardship responsibility and the GIS Coordinator.</sechandl>
+		</secinfo>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr/>
+    </attracc>
+    <logic></logic>
+    <complete/>
+    <lineage>
+      <procstep>
+        <procdesc></procdesc>
+        <procdate></procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper/>
+        </cntperp>
+        <cntaddr>
+          <addrtype/>
+          <address/>
+          <city/>
+          <state/>
+          <postal/>
+        </cntaddr>
+        <cntvoice/>
+      </cntinfo>
+    </distrib>
+    <distliab/>
+    <stdorder>
+      <digform><digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt><onlinopt><computer><networka><networkr/></networka></computer></onlinopt></digtopt></digform>
+      <fees/>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd/>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper/>
+        </cntperp>
+        <cntaddr>
+          <addrtype/>
+          <address/>
+          <city/>
+          <state/>
+          <postal/>
+        </cntaddr>
+        <cntvoice/>
+      </cntinfo>
+    </metc>
+    <metstdn/>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

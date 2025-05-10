@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey</origin>
+				<pubdate>2010</pubdate>
+				<pubtime>Unknown</pubtime>
+				<title>LANDFIRE Refresh 2001 (lf_1.0.5) Existing Vegetation Type (lf_105evt)</title>
+				<geoform>raster digital data</geoform>
+				<serinfo>
+					<sername>LANDFIRE Existing Vegetation Type</sername>
+					<issue>Refresh 2001 (lf_1.0.5)</issue>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Sioux Falls, SD</pubplace>
+					<publish>Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey</publish>
+				</pubinfo>
+				<othercit>United States Forest Service</othercit>
+				<onlink>http://www.landfire.gov</onlink>
+				<onlink>http://landfire.cr.usgs.gov/viewer/</onlink>
+			</citeinfo>
+		</citation>
+		<descript>
+			<abstract>The LANDFIRE existing vegetation layers describe the following elements of existing vegetation for each LANDFIRE mapping zone: existing vegetation type, existing vegetation canopy cover, and existing vegetation height. Vegetation is mapped using predictive landscape models based on extensive field reference data, satellite imagery, biophysical gradient layers, and classification and regression trees.
+
+DATA SUMMARY: The existing vegetation type (EVT) data layer represents the current distribution of the terrestrial ecological systems classification developed by NatureServe for the western Hemisphere (http://www.natureserve.org/publications/usEcologicalsystems.jsp). A terrestrial ecological system is defined as a group of plant community types (associations) that tend to co-occur within landscapes with similar ecological processes, substrates, and/or environmental gradients. EVTs are mapped in LANDFIRE using decision tree models, field reference data, Landsat imagery, and digital elevation model data. Decision tree models are developed separately for each of the main islands or groups of smaller islands - using C5 software.  Model specific cross validation error matrices are generated during this process to assess levels of accuracy of the models.  Decision tree relationships are then used to generate EVT spatial data layers for each of the islands.
+
+REFRESH 2001 (lf_1.0.5):
+
+Improvements were made to the EVT layer based on comments and review by Hawaii data users.  These improvements included making targeted fixes to address inaccuracies in the LF_1.0.0 (National) mapping products for specific parts of each island.  A systematic correction was also employed to remove small roads and trails from all islands which were over-mapped in LF_1.0.0.</abstract>
+			<purpose>
+LANDFIRE is a multi-partner mapping project which generates consistent, comprehensive maps and data for the entire United States.  The data describe existing vegetation composition and structure, wildland fuel (crown and surface), simulated historical fire regimes, and current departure from simulated historical vegetation conditions. The consistent and comprehensive nature of LANDFIRE methods ensures data are nationally relevant, while the 30-meter grid resolution assures that data has local application.  Data is based on peer-reviewed science and relies on methodologies from remote sensing, ecosystem simulation, vegetation and disturbance ecology, predictive landscape mapping, landscape simulation, and fire behavior and effects modeling.
+
+The initial data, referred to as LANDFIRE National (lf_1.0.0), was completed winter 2010.  Subsequent versions include LANDFIRE Rapid Refresh (lf_1.0.1), LANDFIRE Improvements (lf_1.0.2), and LANDFIRE Refresh 2001 (lf_1.0.5) and 2008 (lf_1.1.0).  Biennial and decadal remaps are also scheduled.
+
+LANDFIRE Rapid Refresh (lf_1.0.1) increased Canopy Bulk Density and reduced Canopy Base Height.  Fires greater than 1000 acres through 2007 were incorporated in the data.  Rapid Refresh was completed in 2008.
+
+LANDFIRE Improvements (lf_1.0.2), based on user feedback, include refinement of the international borders, riparian and wetlands filter, assignment of certain agricultural and urban classes as burnable, and an increase in the occurrence of barren and water.  Improvements completion is scheduled for spring 2010.
+
+LANDFIRE Refresh 2001 (lf_1.0.5) incorporates all Improvement enhancements as well as remodeled cover and height layers.  Imagery used in LANDFIRE National covered a span of years, and because of this, several large wildland fires are not represented in the data.  Refresh 2001 ensures wildland fires through 2001 are represented.  Refresh 2001 completion is scheduled for spring 2011.
+
+LANDFIRE Refresh 2008 (lf_1.1.0) uses 2001 (lf_1.0.5) data as a launching point to incorporate disturbance that occurred on the landscape after 2001.  Disturbances include not only wildland fire but other activities, both managed and naturally occurring.  Vegetation growth was modeled where both disturbance and non-disturbance occurs. Refresh 2008 completion is scheduled for spring 2011.
+
+Biennial remaps will be a refinement of prior process and methods and the first cycle is scheduled for 2012 through 2013.  Decadal remaps are planned with specific dates to be determined.
+
+LANDFIRE is supported by the US Department of Agriculture (USDA) Forest Service Office of Fire and Aviation Management, the US Department of Interior (US DOI) Office of Wildland Fire Coordination, and The Nature Conservancy. LANDFIRE meets agency, partner, and stakeholder needs for data to support landscape fire management planning, prioritization of fuel treatments, collaboration, community and firefighter protection, and effective resource allocation.
+</purpose>
+			<supplinf>Four attributes are provided in which LANDFIRE EVTs have been cross-walked to existing vegetation classifications. These attributes are provided to help characterize and describe the LANDFIRE EVTs nationally in terms of these existing vegetation classifications but should not be used to create coarser, thematically simplified maps as they encompass a large amount of local variation. The Order, Class, and Subclass attributes are based on the Federal Geographic  Data Committee - Vegetation Subcommittee's vegetation classification standard and pertain to upper physiognomic levels of the National Vegetation Classification System hierarchy. Order describes the dominant life forms (tree, shrub, dwarf shrub, herbaceous, or nonvascular) within the Vegetated Division of the hierarchy. Class describes the level in the classification hierarchy defined by the relative percent canopy cover of the tree, shrub, dwarf shrub, herb, and nonvascular life form in the uppermost strata during the peak of the growing season. Subclass describes the predominant leaf phenology of classes defined by tree, shrub, or dwarf shrub stratum (evergreen, deciduous, mixed evergreen-deciduous), and the average vegetation height for the herbaceous stratum (tall, medium, short). In addition to physiognomy, a cross-walk based more on the floristic composition of each EVT is provided using the combined classifications SAF and SRM for forested and rangeland types, respectively. LANDFIRE EVTs that do not apply to these pre-existing categories are cross-walked to coarser, LANDFIRE "cover classes".</supplinf>
+		</descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>Not Applicable</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>publication date</current>
+		</timeperd>
+		<status>
+			<progress>Under Review</progress>
+			<update>None planned</update>
+		</status>
+		<spdom>
+			<bounding>
+        <westbc>-160.6050</westbc>
+        <eastbc>-154.7280</eastbc>
+        <northbc>22.2961</northbc>
+        <southbc>18.8399</southbc>
+			</bounding>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>Raster digital data</themekey>
+				<themekey>U.S. Geological Survey</themekey>
+				<themekey>USGS</themekey>
+				<themekey>GIS</themekey>
+				<themekey>LANDFIRE</themekey>
+				<themekey>USFS</themekey>
+				<themekey>Existing Vegetation Type</themekey>
+				<themekey>EVT</themekey>
+				<themekey>Improvements</themekey>
+			</theme>
+			<theme>
+				<themekt>ISO 19115 Category</themekt>
+				<themekey>imageryBaseMapsEarthCover</themekey>
+				<themekey>010</themekey>
+			</theme>
+			<place>
+				<placekt>U.S. Department of Commerce, 1995, Countries, dependencies, areas of special sovereignty, and their principal administrative divisions, Federal Information Processing Standard 10-4,): Washington, D.C., National Institute of Standards and Technology</placekt>
+				<placekey>United States</placekey>
+				<placekey>U.S.</placekey>
+				<placekey>US</placekey>
+			</place>
+			<temporal>
+				<tempkt>None</tempkt>
+			</temporal>
+		</keywords>
+		<accconst>None</accconst>
+		<useconst>
+Although LANDFIRE products are delivered as 30-meter pixels, they should not be used at the individual pixel level or on small groups of pixels. LANDFIRE products were designed to support 1) national (all states) strategic planning, 2) regional (single large states or groups of smaller states), and 3) strategic/tactical planning for large sub-regional landscapes and Fire Management Units (FMUs) (such as significant portions of states or multiple federal administrative entities).  The applicability of LANDFIRE products to support fire and land management planning on smaller areas will vary by product, location, and specific use. Further investigation by local and regional experts should be conducted to inform decisions regarding local applicability. However, it is the responsibility of the local user, using LANDFIRE metadata and local knowledge, to determine if and/or how LANDFIRE can be used for particular areas of interest.
+
+LANDFIRE products are not intended to replace local products, but rather serve as a back-up by providing wall-to-wall cross-boundary products. It is the responsibility of the user to be familiar with the value, assumptions, and limitations of LANDFIRE products.  Managers and planners must evaluate LANDFIRE data according to the scale and requirements specific to their needs.
+</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey</cntorg>
+				</cntorgp>
+				<cntpos>Customer Service Representative</cntpos>
+				<cntaddr>
+					<addrtype>physical address</addrtype>
+					<address>47914 252nd Street</address>
+					<city>Sioux Falls</city>
+					<state>SD</state>
+					<postal>57198-0001</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>605/594-6151</cntvoice>
+				<cntfax>605/594-6589</cntfax>
+				<cntemail>helpdesk@landfire.gov</cntemail>
+			</cntinfo>
+		</ptcontac>
+		<datacred>Data have been collected and analyzed by teams at both USGS EROS, Sioux Falls, SD and at the USFS, Rocky Mountain Research Station, Missoula, MT.  Depending on the data set described primary responsibility may reside with USGS EROS or with USFS.  Contact information will be listed in the Contact Section and in the Metadata Reference section with regards to the primary responsibility.</datacred>
+		<secinfo>
+			<secsys>None in place</secsys>
+			<secclass>Unclassified</secclass>
+			<sechandl>If there is ever doubt, contact the appropriate resource staff who has stewardship responsibility and the GIS Coordinator.</sechandl>
+		</secinfo>
+		<native>Microsoft Windows 2000 Version 5.0 (Build 2195) Service Pack 4; ESRI ArcCatalog 9.1.0.722</native>
+		<crossref>
+			<citeinfo>
+				<origin>Comer, P.</origin>
+				<origin>Faber-Langendoen, D.</origin>
+				<origin>Evans, R.</origin>
+				<origin>Gawler, S.</origin>
+				<origin>Josse, C.</origin>
+				<origin>Kittel, G.</origin>
+				<origin>Menard, S.</origin>
+				<origin>Pyne, M.</origin>
+				<origin>Reid, M.</origin>
+				<origin>Schulz, K.</origin>
+				<origin>Snow, K.</origin>
+				<origin>Teague, J.</origin>
+				<pubdate>2003</pubdate>
+				<title>Ecological Systems of the United States: A Working Classification of U.S. Terrestrial Systems</title>
+				<othercit>NatureServe, Arlington, Virginia.</othercit>
+			</citeinfo>
+		</crossref>
+	</idinfo>
+	<dataqual>
+		<attracc>
+			<attraccr>Assessment not applied</attraccr>
+			<qattracc>
+				<attraccv>0.0</attraccv>
+				<attracce>Assessment not applied</attracce>
+			</qattracc>
+		</attracc>
+		<logic>Data were checked for overshoots and undershoots.  Polygons, arc topology and raster integrity are present. Data contains projection information.</logic>
+		<complete>The Process_Step Process_Description</complete>
+		<lineage>
+			<procstep>
+				<procdesc>For a detailed definition and discussion on LANDFIRE, refer to http://www.LANDFIRE.gov</procdesc>
+				<procdate>Unknown</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>U.S. Geological Survey</cntorg>
+						</cntorgp>
+						<cntpos>Customer Service Representative</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>47914 252nd Street</address>
+							<address>USGS EROS</address>
+							<city>Sioux Falls</city>
+							<state>SD</state>
+							<postal>57198-0001</postal>
+							<country>USA</country>
+						</cntaddr>
+						<cntvoice>605/594-6151</cntvoice>
+						<cnttdd>605/594-6933</cnttdd>
+						<cntfax>605/594-6589</cntfax>
+						<cntemail>custserv@usgs.gov</cntemail>
+						<hours>0800 - 1600, CT M-F (-6h CST/-5h  CDT GMT)</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata updated</procdesc>
+				<procdate>20110214</procdate>
+			</procstep>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">C:\DOCUME~1\HKREIL~1\LOCALS~1\Temp\xml1458.tmp</srcused><procdate Sync="TRUE">20110218</procdate><proctime Sync="TRUE">14104600</proctime></procstep><procstep><procdesc Sync="TRUE">Dataset copied.</procdesc><srcused Sync="TRUE">E:\WorkSpace\datalist\metadata\edit_metadata\REFRESH\c01\HI\VEGETATION\hi_105_evt_20110425</srcused><procdate Sync="TRUE">20110425</procdate><proctime Sync="TRUE">17284100</proctime></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct>Raster</direct>
+		<rastinfo>
+			<rasttype>Grid Cell</rasttype>
+			<rowcount>23553</rowcount>
+			<colcount>7783</colcount>
+			<vrtcount>1</vrtcount>
+		</rastinfo>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<mapproj>
+					<mapprojn>Hawaii Albers Equal Area Conic</mapprojn>
+					<albers>
+						<stdparll>8.0</stdparll>
+						<stdparll>18.0</stdparll>
+						<longcm>-157</longcm>
+						<latprjo>13.0</latprjo>
+						<feast>0.000000</feast>
+						<fnorth>0.000000</fnorth>
+					</albers>
+				</mapproj>
+				<planci>
+					<plance>row and column</plance>
+					<coordrep>
+						<absres>30.000000</absres>
+						<ordres>30.000000</ordres>
+					</coordrep>
+					<plandu>meters</plandu>
+				</planci>
+			</planar>
+			<geodetic>
+				<horizdn>North American Datum of 1983</horizdn>
+				<ellips>Geodetic Reference System 80</ellips>
+				<semiaxis>6378137.000000</semiaxis>
+				<denflat>298.257222</denflat>
+			</geodetic>
+		</horizsys>
+	</spref>
+	<eainfo>
+		<detailed>
+			<enttyp>
+				<enttypl>evt</enttypl>
+				<enttypd>Existing Vegetation Type</enttypd>
+				<enttypds>Landfire</enttypds>
+			</enttyp>
+			<attr>
+				<attrlabl>ObjectID</attrlabl>
+				<attrdef>Internal feature number.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Value</attrlabl>
+				<attrdef>Existing vegetation type, see Overview Description for complete list</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>Count</attrlabl>
+				<attrdef>Number of pixels</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>Evt_name</attrlabl>
+				<attrdef>Existing vegetation type name</attrdef>
+				<attrdefs>Landfire</attrdefs>
+				<attrdomv><edom><edomv>Open Water</edomv><edomvd>An NLCD01 class - All areas of open water, generally with less than 25% cover of vegetation or soil.</edomvd><edomvds>NLCD01</edomvds></edom><edom><edomv>Developed-Open Space</edomv><edomvd>An NLCD01 class - Includes areas with a mixture of some constructed materials, but mostly vegetation in the form of lawn grasses. Impervious surfaces account for less than 20 percent of total cover. These areas most commonly include large-lot single-family housing units, parks, golf courses, and vegetation planted in developed settings for recreation, erosion control, or aesthetic purposes.</edomvd><edomvds>NLCD01</edomvds></edom><edom><edomv>Developed-Low Intensity</edomv><edomvd>An NLCD01 class - Includes areas with a mixture of constructed materials and vegetation. Impervious surfaces account for 20-49 percent of total cover. These areas most commonly include single-family housing units.</edomvd><edomvds>NLCD01</edomvds></edom><edom><edomv>Developed-Medium Intensity</edomv><edomvd>An NLCD01 class - Includes areas with a mixture of constructed materials and vegetation. Impervious surfaces account for 50-79 percent of the total cover. These areas most commonly include single-family housing units.</edomvd><edomvds>NLCD01</edomvds></edom><edom><edomv>Developed-High Intensity</edomv><edomvd>An NLCD01 class - Includes highly developed areas where people reside or work in high numbers. Examples include apartment complexes, row houses and commercial/industrial. Impervious surfaces account for 80 to100 percent of the total cover.</edomvd><edomvds>NLCD01</edomvds></edom><edom><edomv>Barren</edomv><edomvd>An NCD01 class - Barren areas of bedrock, desert pavement, scarps, talus, slides, volcanic material, glacial debris, sand dunes, strip mines, gravel pits and other accumulations of earthen material. Generally, vegetation accounts for less than 15% of total cover.</edomvd><edomvds>NLCD01</edomvds></edom><edom><edomv>Agriculture-Cultivated Crops and Irrigated Agriculture</edomv><edomvd>An NLCD01 class - Areas used for the production of annual crops, such as corn, soybeans, vegetables, tobacco, and cotton, and also perennial woody crops such as orchards and vineyards. Crop vegetation accounts for greater than 20 percent of total vegetation. This class also includes all land being actively tilled.
+</edomvd><edomvds>NLCD01</edomvds></edom><edom><edomv>Hawai'i Bog</edomv><edomvd>placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Lowland Rainforest</edomv><edomvd>Important taxa in this rainforest system include Alyxia oliviformis, Antidesma platyphyllum, Broussaisia arguta, Cheirodendron spp., Cibotium spp., Coprosma spp., Cyrtandra spp., Dicranopteris linearis, Diospyros sandwicensis, Freycinetia arborea, Hedyotis spp., Ilex anomala, Korthalsella spp., Machaerina spp., Melicope spp., Myrsine spp., Peperomia spp., Pittosporum spp., Psychotria spp., Sadleria spp., Smilax melastomifolia, and in some areas Pritchardia spp. Native trees that occur in the understory include Psychotria hawaiiensis (kopiko) and Antidesma platyphyllum (hame). The endemic liana (Freycinetia arborea) is often abundant in these forests. Species that act as epiphytes include Astelia menziesiana, Peperomia spp., Adenophorus, Huperzia, and Elaphoglossum spp.</edomvd><edomvds>Ecological Systems</edomvds></edom><edom><edomv>Hawai'i Montane Cloud Forest</edomv><edomvd>Vegetation is dominated by low-statured Metrosideros polymorpha and Cheirodendron spp. (specifically Cheirodendron platyphyllum on O'ahu and Cheirodendron dominii on Kaua'i), which form a low to medium-height canopy from 3 to 40 m tall. Subdominant tree species include Ilex anomala, Alyxia oliviformis, and shrubs Clermontia spp., Cyanea spp., Dubautia platyphylla, Korthalsella spp., Myrsine spp., Trematolobelia spp., Smilax melastomifolia, Stenogyne spp., Phyllostegia spp., and Vaccinium sp. This system supports an abundance of epiphytic shrubs, ferns, mosses and bryophytes. Species that act as epiphytes include Astelia menziesiana, Peperomia spp., and thick mats of bryophytes. Ferns include Dicranopteris linearis, Cibotium spp., Astelia, Adenophorus and Elaphoglossum spp. </edomvd><edomvds>Ecological Systems</edomvds></edom><edom><edomv>Hawai'i Montane Rainforest</edomv><edomvd>Forests can be dominated by Metrosideros polymorpha, Cibotium spp. (tree fern) in some areas, or by a tall, well-stratified canopy of Acacia koa (koa) in other areas.  At the upper elevational limit on Hawai'i and Maui, they quickly grade into Acacia / Sophora forest and other mesic communities. Montane rainforests frequently support a large mass of epiphytic mosses, ferns, and other plants. Common codominant and associated species include Cheirodendron spp., Astelia menziesiana, Carex alligata, Clermontia spp., Cyrtandra spp., Dicranopteris spp., Psychotria spp., Pteridium aquilinum, Rubus spp., Urera glabra, and Vaccinium calycinum. Plants that act as epiphytes include Astelia menziesiana, Carex alligata, Elaphoglossum spp., Metrosideros polymorpha, Peperomia spp., Vaccinium calycinum, and others.</edomvd><edomvds>Ecological Systems</edomvds></edom><edom><edomv>Hawai'i Wet Cliff and Ridge Crest Shrubland</edomv><edomvd>Placeholder </edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Lowland Dry Forest</edomv><edomvd>Lowland dry and mesic forests are exceptionally rich in tree species. Widespread species Metrosideros polymorpha is a constituent or may codominate in relatively young stands. In driest settings supporting trees, summer deciduous Erythrina sandwicensis may dominate. Presence of diagnostic tree species such as Acacia koaia, Erythrina sandwicensis, Gardenia brighamii, Hibiscadelphus spp., Kokia spp., Nesoluma polynesicum, Reynoldsia sandwicensis, or the shrubs Achyranthes spp., Nototrichium spp., or Tephrosia spp. indicate this dry lowland system. Other characteristics trees include Canthium odoratum, Alphitonia ponderosa, Nestegis sandwicensis, Pleomele spp., Rauvolfia sandwicensis, Santalum spp., Sophora chrysophylla, Pouteria sandwicensis, and Sapindus oahuensis. Native shrubs include Dodonaea, Styphelia, Osteomeles, Sida, Waltheria, Nothocestrum spp., Myrsine lanaiensis, Wikstroemia spp., Plumbago zeylanica, Senna gaudichaudii, Plectranthus parviflorus (= Plectranthus australis), Lipochaeta spp., Tetramolopium spp., and Chamaesyce spp. Native vines include Ipomoea spp., Bonamia menziesii, and Canavalia spp. Native ferns include Doryopteris and Pellaea ternifolia. </edomvd><edomvds>Ecological Systems</edomvds></edom><edom><edomv>Hawai'i Lowland Mesic Forest</edomv><edomvd>Metrosideros polymorpha, Acacia koa, Diospyros sandwicensis, Nestegis sandwicensis, Pleomele spp., and Pritchardia kaalae dominate or codominate. Diagnostic species of this system include the trees Antidesma pulvinatum, Cryptocarya mannii, Alectryon macrococcus, Charpentiera spp., Flueggea neowawraea, Rhus sandwicensis, Pisonia spp., and shrub and vine species Ctenitis squamigera, Doodia spp., and Strongylodon ruber. Other characteristic species in these diverse mesic forests may include Antidesma platyphyllum, Bobea spp., Coprosma spp., Gardenia spp., Hibiscus spp., Melicope spp., Myrsine spp., Nothocestrum spp., Psychotria spp., Ochrosia spp., Pandanus tectorius, Pipturus albidus, Pittosporum spp., Rauvolfia spp., Santalum spp., Syzygium sandwicense, Xylosma hawaiiensis, Tetraplasandra spp., Zanthoxylum hawaiiense, and drier forest species such as Chamaesyce celastroides, Sophora chrysophylla, and Myoporum sandwicense. The understory is variable and may be dominated by sedges and ferns or shrubs. The tree fern Cibotium spp. is typically absent. Common shrubs and vines include Alyxia oliviformis, Cyanea spp., Delissea spp., Dodonaea viscosa, Eugenia spp., Freycinetia arborea, Hedyotis spp., Lobelia spp., Styphelia tameiameiae, and Vaccinium dentatum. Common ferns and fern allies present are Asplenium nidus, Dicranopteris linearis, Pteris spp., and graminoids Carex spp. </edomvd><edomvds>Ecological Systems</edomvds></edom><edom><edomv>Hawai'i Montane-Subalpine Dry Forest and Woodland</edomv><edomvd>Vegetation is dominated or codominated by Metrosideros polymorpha, Sophora chrysophylla, Myoporum sandwicense, Acacia koa, Chamaesyce celastroides, or Chamaesyce olowaluana. Diagnostic taxa for this system are Chamaesyce olowaluana, Sophora chrysophylla and species of Exocarpos shrubs. Other trees include Myrsine lanaiensis, Santalum spp., and Zanthoxylum hawaiiense. Dodonaea viscosa, Styphelia tameiameiae, Chenopodium oahuense, and Vaccinium spp. frequently form a sparse to moderately dense shrub layer up to 3 m tall. Other shrubs may include Bidens menziesii, Coprosma ernodeoides, Dubautia ciliolata, Dubautia linearis, Geranium cuneatum, Geranium multiflorum, Osteomeles anthyllidifolia, Silene spp., and Tetramolopium spp. Native graminoids (e.g., Gahnia spp.) usually have less than 10% cover and ferns (e.g., Pteridium aquilinum) are present, but contribute low cover especially at higher elevations. Native grasses include Eragrostis atropioides. </edomvd><edomvds>Ecological Systems</edomvds></edom><edom><edomv>Hawai'i Montane-Subalpine Mesic Forest</edomv><edomvd>Metrosideros polymorpha, Acacia koa, or Nestegis sandwicensis dominate or codominate with other trees (e.g., Santalum spp., Sapindus spp.). Sapindus saponaria is a diagnostic species of this mesic system. Other trees may be present such as Coprosma spp., Ilex anomala, Melicope spp., Myoporum sandwicense, Myrsine spp., Nothocestrum breviflorum, Pipturus albidus, Pisonia brunoniana, Pittosporum spp., Psychotria hawaiiensis, Zanthoxylum hawaiiense, and drier forest species such as Chamaesyce celastroides and Sophora chrysophylla. The understory is variable and may be dominated by sedges and ferns or shrubs. Common shrubs include Clermontia spp., Cyanea spp., Dodonaea viscosa, Hedyotis spp., Rubus hawaiensis, Stenogyne spp., and Styphelia tameiameiae. Common ferns and fern allies present include Dryopteris wallichiana, Microlepia strigosa, Nephrolepis cordifolia, Melicope spp. (= Pelaea spp.), Sadleria spp., and graminoids Carex spp. and Uncinia uncinata. </edomvd><edomvds>Ecological Systems</edomvds></edom><edom><edomv>Hawai'i Lowland Dry Shrubland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Lowland Mesic Shrubland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Lowland Dry Grassland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Lowland Mesic Grassland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Montane-Subalpine Dry Shrubland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Montane-Subalpine Dry Grassland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Montane-Subalpine Mesic Grassland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Alpine Dwarf-Shrubland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Dry Cliff</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Dry Coastal Strand</edomv><edomvd>Placehlder </edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Wet-Mesic Coastal Strand</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawai'i Subalpine Mesic Shrubland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Wetland Vegetation-Tree</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Wetland Vegetation-Shrub</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Wetland Vegetation-Herbaceous</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Dry Forest</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Wet-Mesic Forest</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Deciduous Shrubland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Perennial Grassland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Introduced Evergreen Shrubland</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Introduced Coastal Wetland Vegetation - Tree</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Introduced Coastal Wetland Vegetation - Shrub</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Introduced Coastal Wetland Vegetation - Herbaceous</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>Hawaiian Managed Tree Plantation</edomv><edomvd>Placeholder</edomvd><edomvds>LANDFIRE</edomvds></edom></attrdomv></attr>
+			<attr>
+				<attrlabl>SystemGroup</attrlabl>
+				<attrdef>Existing Vegetation System Group Identification</attrdef>
+				<attrdefs>Landfire</attrdefs>
+				<attrdomv><edom><edomv>11</edomv><edomvd>Open Water</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>21</edomv><edomvd>Developed-Open Space</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>22</edomv><edomvd>Developed-Low Intensity</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>23</edomv><edomvd>Developed-Medium Intensity</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>24</edomv><edomvd>Developed-High Intensity</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>31</edomv><edomvd>Developed-High Intensity</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>82</edomv><edomvd>Agriculture-Cultivated Crops and Irrigated Agriculture</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>675</edomv><edomvd>Inland Marshes and Prairies</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>703</edomv><edomvd>Introduced Perennial Grassland and Forbland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>706</edomv><edomvd>Introduced Upland Vegetation-Shrub</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>707</edomv><edomvd>Introduced Upland Vegetation-Treed</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>708</edomv><edomvd>Introduced Woody Wetland Vegetation</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>709</edomv><edomvd>Introduced Herbaceous Wetland Vegetation</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>731</edomv><edomvd>Managed Tree Plantation</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>790</edomv><edomvd>Hawaiian Rainforest</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>791</edomv><edomvd>Hawaiian Dry Forest</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>792</edomv><edomvd>Hawaiian Mesic Forest</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>793</edomv><edomvd>Hawaiian Dry Shrubland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>794</edomv><edomvd>Hawaiian Mesic Shrubland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>795</edomv><edomvd>Hawaiian Dry Grassland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>796</edomv><edomvd>Hawaiian Mesic Grassland</edomvd><edomvds>LANDFIRE</edomvds></edom></attrdomv></attr>
+			<attr>
+				<attrlabl>SystemGroupName</attrlabl>
+				<attrdef>Aggregated existing vegetation types based on dominant species or groups of dominant species, see SystemGroup</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>Nvcs_order</attrlabl>
+				<attrdef>National Vegetation Classification System Physiognomic Order</attrdef>
+				<attrdefs>National Vegetation Classification System</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>Herbaceous - Nonvascular-dominated</edomv>
+						<edomvd>Herbaceous - Nonvascular-dominated</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Herbaceous/Non-vascular</edomv>
+						<edomvd>Herbaceous/Non-vascular</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>No Dominant Life Form</edomv>
+						<edomvd>No Dominant Life Form</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Non-vegetated</edomv>
+						<edomvd>Non-vegetated</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Shrub</edomv>
+						<edomvd>Shrub</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Shrub-dominated</edomv>
+						<edomvd>Shrub-dominated</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Treed</edomv>
+						<edomvd>Treed</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Tree-dominated</edomv>
+						<edomvd>Tree-dominated</edomvd>
+					</edom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Nvcs_class</attrlabl>
+				<attrdef>National Vegetation Classification System Physiognomic Class</attrdef>
+				<attrdefs>National Vegetation Classification System</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>Closed tree canopy</edomv>
+						<edomvd>Closed tree canopy</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Dwarf Shrubland</edomv>
+						<edomvd>Dwarf Shrubland</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Herbaceous - grassland</edomv>
+						<edomvd>Herbaceous - grassland</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>No Dominant Lifeform</edomv>
+						<edomvd>No Dominant Lifeform</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Non-vegetated</edomv>
+						<edomvd>Non-vegetated</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Shrubland</edomv>
+						<edomvd>Shrubland</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Sparsely Vegetated</edomv>
+						<edomvd>Sparsely Vegetated</edomvd>
+					</edom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Nvcs_subclass</attrlabl>
+				<attrdef>National Vegetation Classification System Physiognomic Subclass</attrdef>
+				<attrdefs>National Vegetation Classification System</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>Annual Graminoid/Forb</edomv>
+						<edomvd>Annual Graminoid/Forb</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Deciduous</edomv>
+						<edomvd>Deciduous</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Evergreen</edomv>
+						<edomvd>Evergreen</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Mixed</edomv>
+						<edomvd>Mixed</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Mixed evergreen-deciduous dwarf-shrubland</edomv>
+						<edomvd>Mixed evergreen-deciduous dwarf-shrubland</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Mixed evergreen-deciduous open tree canopy</edomv>
+						<edomvd>Mixed evergreen-deciduous open tree canopy</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Mixed evergreen-deciduous shrubland</edomv>
+						<edomvd>Mixed evergreen-deciduous shrubland</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>No Dominant Lifeform</edomv>
+						<edomvd>No Dominant Lifeform</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Non-vegetated</edomv>
+						<edomvd>Non-vegetated</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Perennial Graminoid</edomv>
+						<edomvd>Perennial Graminoid</edomvd>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>Perennial graminoid grassland</edomv>
+						<edomvd>Perennial graminoid grassland</edomvd>
+					</edom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Safsrm_covertype</attrlabl>
+				<attrdef>Society of American Foresters &amp; Society of Range Management Cover Type</attrdef>
+				<attrdefs>Society of American Foresters &amp; Society of Range Management</attrdefs>
+				<attrdomv><edom><edomv>LF 11: Water</edomv><edomvd>LF 11: Water</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 20: Developed</edomv><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 31: Barren</edomv><edomvd>LF 31: Barren</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 51: Introduced Upland Vegetation - Tree</edomv><edomvd>LF 51: Introduced Upland Vegetation - Tree</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 52: Introduced Upland Vegetation - Shrub</edomv><edomvd>LF 52: Introduced Upland Vegetation - Shrub</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 54: Introduced Upland Vegetation - Herbaceous</edomv><edomvd>LF 54: Introduced Upland Vegetation - Herbaceous</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 58: Introduced Woody Wetlands and Riparian Vegetation</edomv><edomvd>LF 58: Introduced Woody Wetlands and Riparian Vegetation</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 59: Introduced Herbaceous Wetland and Riparian Vegetation</edomv><edomvd>LF 59: Introduced Herbaceous Wetland and Riparian Vegetation</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 61: Managed Tree Plantation</edomv><edomvd>LF 61: Managed Tree Plantation</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 73: Hawaiian Rainforest</edomv><edomvd>LF 73: Hawaiian Rainforest</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 74: Hawaiian Dry Forest</edomv><edomvd>LF 74: Hawaiian Dry Forest</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 75: Hawaiian Mesic Forest</edomv><edomvd>LF 75: Hawaiian Mesic Forest</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 76: Hawaiian Mesic Shrubland</edomv><edomvd>LF 76: Hawaiian Mesic Shrubland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 77: Hawaiian Dry Shrubland</edomv><edomvd>LF 77: Hawaiian Dry Shrubland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 78: Hawaiian Mesic Grassland</edomv><edomvd>LF 78: Hawaiian Mesic Grassland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 79: Hawaiian Dry Grassland</edomv><edomvd>LF 79: Hawaiian Dry Grassland</edomvd><edomvds>LANDFIRE</edomvds></edom><edom><edomv>LF 80: Agriculture</edomv><edomvd>LF 80: Agriculture</edomvd><edomvds>LANDFIRE</edomvds></edom></attrdomv></attr>
+			<attr>
+				<attrlabl>SystmGrpPhys</attrlabl>
+				<attrdef>System Group Physiology</attrdef>
+				<attrdefs>LANDFIRE</attrdefs>
+				<attrdomv><edom><edomv>Agricultural</edomv><edomvd>Agricultural</edomvd></edom><edom><edomv>Developed</edomv><edomvd>Developed</edomvd></edom><edom><edomv>Exotic Herbaceous</edomv><edomvd>Exotic Herbaceous</edomvd></edom><edom><edomv>Grassland</edomv><edomvd>Grassland</edomvd></edom><edom><edomv>Hardwood</edomv><edomvd>Hardwood</edomvd></edom><edom><edomv>Non-vegetated</edomv><edomvd>Non-vegetated</edomvd></edom><edom><edomv>Riparian</edomv><edomvd>Riparian</edomvd></edom><edom><edomv>Shrubland</edomv><edomvd>Shrubland</edomvd></edom></attrdomv></attr>
+			<attr>
+				<attrlabl>R</attrlabl>
+				<attrdef>Red color value</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>G</attrlabl>
+				<attrdef>Green color value</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>B</attrlabl>
+				<attrdef>Blue color value</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>Red</attrlabl>
+				<attrdef>Red color value/255</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>Green</attrlabl>
+				<attrdef>Green color value/255</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+			<attr>
+				<attrlabl>Blue</attrlabl>
+				<attrdef>Blue color value/255</attrdef>
+				<attrdefs>Landfire</attrdefs>
+			</attr>
+		</detailed>
+		<overview>
+			<eaover>If the following table does not display properly, then please go to the LANDFIRE Data Distribution Site &lt;http://landfire.cr.usgs.gov/viewer/viewer.html&gt; and download the corresponding attribute table.
+
+Value	EVT_Name
+
+11	Open Water
+21	Developed-Open Space
+22	Developed-Low Intensity
+23	Developed-Medium Intensity
+24	Developed-High Intensity
+31	Barren
+82	Agriculture-Cultivated Crops and Irrigated Agriculture
+2806	Hawai'i Bog
+2808	Hawai'i Lowland Rainforest
+2809	Hawai'i Montane Cloud Forest
+2810	Hawai'i Montane Rainforest
+2811	Hawai'i Wet Cliff and Ridge Crest Shrubland
+2813	Hawai'i Lowland Dry Forest
+2814	Hawai'i Lowland Mesic Forest
+2815	Hawai'i Montane-Subalpine Dry Forest and Woodland
+2816	Hawai'i Montane-Subalpine Mesic Forest
+2817	Hawai'i Lowland Dry Shrubland
+2818	Hawai'i Lowland Mesic Shrubland
+2819	Hawai'i Lowland Dry Grassland
+2820	Hawai'i Lowland Mesic Grassland
+2821	Hawai'i Montane-Subalpine Dry Shrubland
+2822	Hawai'i Montane-Subalpine Dry Grassland
+2823	Hawai'i Montane-Subalpine Mesic Grassland
+2824	Hawai'i Alpine Dwarf-Shrubland
+2825	Hawai'i Dry Cliff
+2826	Hawai'i Dry Coastal Strand
+2827	Hawai'i Wet-Mesic Coastal Strand
+2828	Hawai'i Subalpine Mesic Shrubland
+2836	Hawaiian Introduced Wetland Vegetation-Tree
+2837	Hawaiian Introduced Wetland Vegetation-Shrub
+2838	Hawaiian Introduced Wetland Vegetation-Herbaceous
+2845	Hawaiian Introduced Dry Forest
+2846	Hawaiian Introduced Wet-Mesic Forest
+2847	Hawaiian Introduced Deciduous Shrubland
+2848	Hawaiian Introduced Perennial Grassland
+2849	Hawaiian Introduced Evergreen Shrubland
+2852	Introduced Coastal Wetland Vegetation - Tree
+2853	Introduced Coastal Wetland Vegetation - Shrub
+2854	Introduced Coastal Wetland Vegetation - Herbaceous
+2855	Hawaiian Managed Tree Plantation
+</eaover>
+			<eadetcit>LF_105 (Refresh 2001) Existing Vegetation Type</eadetcit>
+		</overview>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>U.S. Geological Survey</cntorg>
+				</cntorgp>
+				<cntpos>Customer Services Representative</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>47914 252nd Street</address>
+					<address>USGS EROS</address>
+					<city>Sioux Falls</city>
+					<state>SD</state>
+					<postal>57198-0001</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>605/594-6151</cntvoice>
+				<cnttdd>605/594-6933</cnttdd>
+				<cntfax>605/594-6589</cntfax>
+				<cntemail>custserv@usgs.gov</cntemail>
+				<hours>0800 - 1600, CT M-F (-6h CST/-5h  CDT GMT)</hours>
+				<cntinst>The USGS point of contact is for questions relating only to the data display and download from this web site. For questions regarding data content and quality, refer to the original metadata document.</cntinst>
+			</cntinfo>
+		</distrib>
+		<resdesc>Downloadable Data</resdesc>
+		<distliab>This product is reproduced from geospatial information prepared by the U.S. Department of Agriculture, Forest Service and USGS EROS.  By removing the contents of this package or taking receipt of these files via electronic file transfer methods, you understand that the data stored on this media is in draft condition.  Represented features may not be in an accurate geographic location.  The Forest Service and USGS EROS make no expressed or implied warranty, including warranty of merchantability and fitness, with respect to the character, function, or capabilities of the data or their appropriateness for any user's purposes.  The Forest Service and USGS EROS reserve the right to correct, update, modify, or replace this geospatial information without notification.</distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>ARCG</formname>
+					<formvern>ArcGIS 9.3</formvern>
+					<formspec>Raster</formspec>
+					<transize>49.835</transize>
+				</digtinfo>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<networka>
+								<networkr>http://landfire.cr.usgs.gov/viewer</networkr>
+							</networka>
+						</computer>
+						<accinstr>The URL &lt;http://landfire.cr.usgs.gov/viewer&gt; provides a map interface that allows for data downloads within a customer defined area of interest. Zoom tools are available that can be used to investigate areas of interest on the map interface. The download tool allows the customer to capture layers from the map, utilizing the Seamless Data Distribution System process for downloading. A request summary page is then generated with the download layers listed. By clicking the "download" button on the summary page, a zipped file will be generated that can be saved on the customer's computer. The file can then be unzipped and imported into various user software applications.</accinstr>
+						<oncomp>Not available for dissemination.</oncomp>
+					</onlinopt>
+				</digtopt>
+			</digform>
+			<fees>None</fees>
+			<turnarnd>Variable</turnarnd>
+		</stdorder>
+		<custom>Data defaults as ArcGrid.  IMG and GeoTIFF formats are also available.</custom>
+		<techpreq>ESRI ArcMap Suite and/or Arc/Info software, and supporting operating systems.</techpreq>
+		<availabl>
+			<timeinfo>
+				<rngdates>
+					<begdate>2010</begdate>
+					<enddate>unknown</enddate>
+				</rngdates>
+			</timeinfo>
+		</availabl>
+	</distinfo>
+	<metainfo>
+		<metd>20070201</metd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>U.S. Geological Survey</cntorg>
+				</cntorgp>
+				<cntpos>Customer Service Representative</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>47914 252nd Street</address>
+					<address>USGS EROS</address>
+					<city>Sioux Falls</city>
+					<state>SD</state>
+					<postal>57198-0001</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>605/594-6151</cntvoice>
+				<cntfax>605/594-6589</cntfax>
+				<cntemail>custserv@usgs.gov</cntemail>
+				<hours>0800 - 1600 CT, M - F (-6h CST/-5h CDT GMT)</hours>
+			</cntinfo>
+		</metc>
+		<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<mettc>local time</mettc>
+		<metac>None</metac>
+		<metuc>None</metuc>
+		<metsi>
+			<metscs>None</metscs>
+			<metsc>Unclassified</metsc>
+			<metshd>None</metshd>
+		</metsi>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+	</metainfo>
+	<Esri><CreaDate>20110425</CreaDate><CreaTime>17284100</CreaTime><SyncOnce>TRUE</SyncOnce><ModDate>20110425</ModDate><ModTime>15403900</ModTime><MetaID>{A2185620-FCCE-466D-BA87-04A9ECD13149}</MetaID></Esri><mdDateSt Sync="TRUE">20110425</mdDateSt><distInfo><distributor><distorTran><onLineSrc><linkage Sync="TRUE">file://\\IGSKMNCNGS220\Distribution$\XML_Metadata\_New_Incoming\105\hi_105_evt_20110425</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc></distorTran></distributor></distInfo></metadata>
