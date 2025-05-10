@@ -1,0 +1,55 @@
+attribute	value
+dataStatement	This March 2010 mosaic rainfall map of the State of Hawaii is a high spatial resolution (~250m) gridded prediction of cumulative rainfall in millimeters from 01 Mar 2010 to 31 Mar 2010. This was produced using several climate-aided modified automatic kriging interpolations of a log transformed sum of a monthly rainfall anomaly ratio (observed mm / mean monthly mm) and a constant of 1 (k), for each county extent. This process was done for four individually produced maps of Kauai, Honolulu (Oahu), Maui (Maui, Lanai, Molokai, & Kahoolawe) and Hawaii counties. These kriging processes used 384 unique station locations statewide and their March 2010 recorded and/or estimated rainfall (mm) totals. Please consult each county map meta-data files for more details on map production and accuracy at the county scale. A leave one out cross validation (LOOCV) of the all station data used in all four counties produced individual R-squared values of: 0.87 0.71 0.89 0.82 for Kauai, Honolulu (Oahu), Maui (Maui, Lanai, Molokai, & Kahoolawe) and Hawaii counties respectively. As a whole leave one out cross validation (LOOCV) data from all stations data compared to observed monthly rainfall (mm) produces a statewide R-squared value of: 0.85 meaning overall this March 2010 statewide mosaic monthly rainfall (mm) map is a high quality estimate of monthly rainfall. All maps are subject to change as new data becomes available or unknown errors are corrected in reoccurring versions. Errors in rainfall estimates do vary over space meaning any gridded rainfall value, even on higher quality maps, could still produce incorrect estimates. Check standard error (SE) maps to better understand spatial estimates of prediction error.
+keywords	Hawaii, Hawaiian Islands, Rainfall prediction, Monthly precipitation, Rainfall, Climate, Spatial interpolation, Kriging
+county	bi, mn, oa, ka
+dataYearMon	2010-03
+dataStartDate	2010-03-01
+dataEndDate	2010-03-31
+dateProduced	2021-08-03
+dataVersionType	archival
+RFstationFile	2010_03_statewide_rf_stations.csv
+RFmmGridFile	2010_03_statewide_rf_mm.tif
+RFmmSEgridFile	2010_03_statewide_rf_mm_SE.tif
+RFanomGridFile	2010_03_statewide_anom.tif
+RFanomSEgridFile	2010_03_statewide_anom_SE.tif
+GeoCoordUnits	Decimal Degrees
+GeoCoordRefSystem	+proj=longlat +datum=WGS84 +no_defs
+Xresolution	0.00225
+Yresolution	0.00225
+ExtentXmin	-159.816
+ExtentXmax	-154.668
+ExtentYmin	18.849
+ExtentYmax	22.269
+varioCounties	vari_fix_rng_low, vari_fix_rng_low, vari_free_all, vari_free_all
+stationCountCounties	115, 108, 116, 45
+krigeRFmmMaxCounties	799.49767, 1160.60498, 460.64752, 881.60904
+krigeRFmmMinCounties	1.8189, 9.36694, 13.09911, -0.18407
+negRFgridZeroCounties	FALSE, FALSE, FALSE, TRUE
+negRFpixCountCounties	0, 0, 0, 44
+gridPixCountCounties	179685, 54628, 28055, 25615
+negRFloocvCounties	FALSE, FALSE, FALSE, FALSE
+rsqRFmmCounties	0.82247, 0.89464, 0.71077, 0.86896
+rmseRFmmCounties	100.33975, 87.75197, 55.46071, 108.37148
+maeRFmmCounties	70.82614, 41.67233, 36.6127, 62.46908
+biasRFmmCounties	44.67867, 30.95147, 17.71397, 47.34632
+rsqRFanomCounties	0.40166, 0.28456, 0.52795, 0.75373
+rmseRFanomCounties	0.70389, 0.36804, 0.29852, 0.38368
+maeRFanomCounties	0.3735, 0.27716, 0.21839, 0.29237
+biasRFanomCounties	0.15203, 0.12963, 0.06967, 0.12429
+stationCount	384
+krigeRFmmMax	1160.60498
+krigeRFmmMin	-0.18407
+negRFgridZero	TRUE
+negRFpixCount	44
+gridPixCount	287983
+negRFloocv	FALSE
+rsqRFmm	0.85332
+rmseRFmm	86.5239
+maeRFmm	51.31198
+biasRFmm	32.98492
+rsqRFanom	0.4379
+rmseRFanom	0.48026
+maeRFanom	0.29004
+biasRFanom	0.1176
+credits	All data produced by University of Hawaii at Manoa Dept. of Geography and the Enviroment, Ecohydology Lab in collaboration with the Water Resource Research Center (WRRC). Support for the Hawai‘i EPSCoR Program is provided by the National Science Foundation’s Research Infrastructure Improvement (RII) Track-1: ‘Ike Wai: Securing Hawaii’s Water Future Award # OIA-1557349.
+contacts	Matthew Lucas (mplucas@hawaii.edu), Ryan Longman (rlongman@hawaii.edu),Thomas Giambelluca (thomas@hawaii.edu)
