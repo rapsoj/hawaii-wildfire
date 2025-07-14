@@ -19,6 +19,7 @@ class Cleaner(BaseCleaner):
             'source': 'LANDFIRE Elevation Data',
             'description': 'Raster elevation data for Hawaii',
             'update_frequency': 'None',
+            'CRS': 'ESRI:102007',
             'url': 'https://landfire.gov/node/5684'
         }
 
