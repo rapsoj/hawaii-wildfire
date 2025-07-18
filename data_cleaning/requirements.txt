@@ -1,6 +1,5 @@
 pandas
 PyYAML
 numpy
-scipy
 rasterio
-rioxarray
+scipy
