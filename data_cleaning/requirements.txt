@@ -3,3 +3,4 @@ PyYAML
 numpy
 rasterio
 scipy
+rioxarray

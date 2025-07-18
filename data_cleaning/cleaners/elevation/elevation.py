@@ -1,9 +1,7 @@
 import pandas as pd
-from pathlib import Path
-from typing import Dict, Any
-import sys
-import rasterio
+from typing import Dict, Any, Union
 import rioxarray
+import numpy as np
 
 
 from base_cleaner import BaseCleaner
@@ -20,29 +18,31 @@ class Cleaner(BaseCleaner):
             'CRS': 'ESRI:102007',
             'url': 'https://landfire.gov/node/5684'
         }
+    
+    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray]:
+        self.logger.info("Downloading elevation data...")
 
-    def download_to_df(self) -> pd.DataFrame:
-        self.logger.info("Downloading data to memory...")
-        
         # read elevation data
-        raster_array = rioxarray.open_rasterio("../data/elevation/LF2020_Elev_220_HI/Tif/LH20_Elev_220.tif")
+        elevation_xarray = rioxarray.open_rasterio("../data/elevation/LF2020_Elev_220_HI/Tif/LH20_Elev_220.tif")
+        # squeeze to remove band information (irrelevant with single-band raster)
+        elevation_array = elevation_xarray.squeeze()
+        # convert to numpy array
+        elevation_array = elevation_array.to_numpy()
 
-        self.logger.info(f"Downloaded {raster_array.count().item()} records")
-        return raster_array
+        self.logger.info(f"Downloaded array with {elevation_xarray.count().item()} pixels")
+        return elevation_array
 
-
-    def clean_from_df(self, df: pd.DataFrame) -> pd.DataFrame:
+    
+    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray]:
         self.logger.info("Cleaning data...")
+
+        # replace values <= -9999 with np.nan
+        cleaned_array = np.where(raw_data > -9999, raw_data, np.nan)
+
+        # check how many non-NaN pixels remain
+        valid_pixel_count = np.count_nonzero(~np.isnan(cleaned_array))
+
+        self.logger.info(f"Cleaned array with {valid_pixel_count} pixels")
+        return cleaned_array
+
         
-        cleaned_array = df.copy()
-
-        # convert nodata values (32767) to NaN
-        nodata_value = cleaned_array.rio.nodata
-        cleaned_array = cleaned_array.where(cleaned_array != nodata_value)
-
-        # replace -9999 values (representing ocean areas) to NaN
-        cleaned_array = cleaned_array.where(cleaned_array != -9999)
-
-        self.logger.info(f"Cleaned data has {cleaned_array.count().item()} records")
-
-        return cleaned_array    
