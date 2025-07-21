@@ -62,7 +62,7 @@ class Cleaner(BaseCleaner):
 
         #Load the SST data into a DataFrame
 
-        df = pd.read_csv('../data/teleconnections/sst.txt', delimiter= " ")
+        df = pd.read_csv('../data/teleconnections/sst.txt', delim_whitespace=True)
 
         self.logger.info(f"Generated {len(df)} records")
 
@@ -75,50 +75,20 @@ class Cleaner(BaseCleaner):
             raise ValueError(f"Unsupported format: {format}. Expected 'dataframe' or 'array'.")
 
     def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray]:
-        """Clean either a pandas DataFrame or a NumPy array"""
+        """Clean pandas DataFrame or NumPy array"""
         if isinstance(raw_data, pd.DataFrame):
             cleaned = raw_data.copy()
-
-            # Standardize date column
-            cleaned['date'] = pd.to_datetime(cleaned['date'], errors='coerce')
-
-            # Fill missing numeric values
-            cleaned['value'] = cleaned['value'].fillna(cleaned['value'].mean())
-
-            # Normalize categorical column
-            cleaned['category'] = cleaned['category'].str.upper()
-
-            # Remove outliers in the value column
-            cleaned = cleaned[cleaned['value'].between(-100, 200)]
-
+            
+            # Renaming the time columns
+            cleaned = cleaned.rename(columns={'YR': 'year', 'MON': 'month'})
+            
+            # Appending nino prefix to all columns except 'year' and 'month' (so the ANOM column is also renamed)
+            cleaned = cleaned.rename(columns={c: 'nino' + c for c in cleaned.columns if c not in ['year', 'month']})
+            
             self.logger.info(f"Cleaned DataFrame with {len(cleaned)} rows")
             return cleaned
-
+        
         elif isinstance(raw_data, np.ndarray):
-            # Remove rows with NaNs
-            cleaned = raw_data[~np.isnan(raw_data).any(axis=1)]
-
-            # Remove numeric outliers
-            cleaned = cleaned[(cleaned >= -100).all(axis=1) & (cleaned <= 200).all(axis=1)]
-
-            self.logger.info(f"Cleaned array with {len(cleaned)} rows")
-            return cleaned
-
-        else:
-            raise TypeError("clean_data supports only pandas DataFrame or numpy ndarray")
-
-    def validate_output(self, df: pd.DataFrame) -> bool:
-        """Custom validation for the example DataFrame output"""
-        if not super().validate_output(df):
-            return False
-
-        expected_columns = ['date', 'value', 'category']
-        if not all(col in df.columns for col in expected_columns):
-            self.logger.error("Missing expected columns")
-            return False
-
-        if not df['category'].str.isupper().all():
-            self.logger.error("Not all categories are uppercase")
-            return False
-
-        return True
+            # Numpy array so just return a copy - main data will be a dataframe anyways
+            self.logger.info(f"Input is NumPy array with shape {raw_data.shape}")
+            return raw_data.copy()
