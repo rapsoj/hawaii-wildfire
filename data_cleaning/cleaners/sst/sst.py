@@ -62,7 +62,7 @@ class Cleaner(BaseCleaner):
 
         #Load the SST data into a DataFrame
 
-        df = pd.read_csv('../data/teleconnections/sst.txt', delim_whitespace=True)
+        df = pd.read_csv('../data/teleconnections/sst.txt', sep='\s+')
 
         self.logger.info(f"Generated {len(df)} records")
 
@@ -79,12 +79,24 @@ class Cleaner(BaseCleaner):
         if isinstance(raw_data, pd.DataFrame):
             cleaned = raw_data.copy()
             
-            # Renaming the time columns
+            # Renaming the year and month columns
             cleaned = cleaned.rename(columns={'YR': 'year', 'MON': 'month'})
             
-            # Appending nino prefix to all columns except 'year' and 'month' (so the ANOM column is also renamed)
-            cleaned = cleaned.rename(columns={c: 'nino' + c for c in cleaned.columns if c not in ['year', 'month']})
+            def rename_column(col):
+                if col in ['year', 'month']:
+                    return col
+                # Replace special characters with underscores to abide by standard_tests.py
+                col = col.replace('+', '_plus_').replace('.', '_')
+                # Only add nino prefix if the column doesn't already start with NINO
+                return col if col.startswith('NINO') else f'nino_{col}'
+
             
+            # Apply the renaming function to all columns
+            cleaned.columns = [rename_column(c) for c in cleaned.columns]
+            
+            # Make column names lowercase
+            cleaned.columns = cleaned.columns.str.lower()
+
             self.logger.info(f"Cleaned DataFrame with {len(cleaned)} rows")
             return cleaned
         

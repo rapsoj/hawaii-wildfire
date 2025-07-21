@@ -4,3 +4,4 @@ numpy
 rasterio
 scipy
 rioxarray
+requests
