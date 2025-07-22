@@ -6,6 +6,7 @@ To use: python data_cleaning.py --cleaner-name example
 
 import pandas as pd
 import numpy as np
+import xarray as xr
 from typing import Dict, Any, Union
 
 from base_cleaner import BaseCleaner
@@ -23,7 +24,7 @@ class Cleaner(BaseCleaner):
             'type': 'synthetic'
         }
 
-    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray]:
+    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Generate synthetic data and return it in the requested format"""
         self.logger.info("Generating synthetic data...")
 
@@ -43,7 +44,7 @@ class Cleaner(BaseCleaner):
         else:
             raise ValueError(f"Unsupported format: {format}. Expected 'dataframe' or 'array'.")
 
-    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray]:
+    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Clean either a pandas DataFrame or a NumPy array"""
         if isinstance(raw_data, pd.DataFrame):
             cleaned = raw_data.copy()

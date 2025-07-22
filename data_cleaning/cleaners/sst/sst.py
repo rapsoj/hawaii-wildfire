@@ -9,7 +9,7 @@ from pathlib import Path
 import requests
 import pandas as pd
 import numpy as np
-
+import xarray as xr
 
 from typing import Dict, Any, Union
 
@@ -37,7 +37,7 @@ class Cleaner(BaseCleaner):
                 'NINO3.4': 'SST in the Niño 3.4 region of the Pacific Ocean',
                 'ANOM': 'The anomaly from the long-term average temperature (for the corresponding Niño region)'}}
 
-    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray]:
+    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Download SST data and return as DataFrame or NumPy array."""
 
         SOURCE_URL = "https://www.cpc.ncep.noaa.gov/data/indices/sstoi.indices"
@@ -74,7 +74,7 @@ class Cleaner(BaseCleaner):
         else:
             raise ValueError(f"Unsupported format: {format}. Expected 'dataframe' or 'array'.")
 
-    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray]:
+    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Clean pandas DataFrame or NumPy array"""
         if isinstance(raw_data, pd.DataFrame):
             cleaned = raw_data.copy()

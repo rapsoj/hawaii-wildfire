@@ -1,8 +1,9 @@
 import pandas as pd
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, Union
 import sys
 import rasterio
+import xarray as xr
 import rioxarray
 
 
@@ -21,7 +22,7 @@ class Cleaner(BaseCleaner):
             'url': 'https://landfire.gov/node/5684'
         }
     
-    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray]:
+    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         self.logger.info("Downloading elevation data...")
 
         # read elevation data
@@ -35,7 +36,7 @@ class Cleaner(BaseCleaner):
         return elevation_array
 
     
-    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray]:
+    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         self.logger.info("Cleaning data...")
 
         # replace values <= -9999 with np.nan

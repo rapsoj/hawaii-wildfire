@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import xarray as xr
 from typing import Dict, Any, Union, Annotated
 import os
 from pathlib import Path
@@ -23,7 +24,7 @@ class Cleaner(BaseCleaner):
             'url': 'https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt'
         }
 
-    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray]:
+    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Generate synthetic data and return it in the requested format"""
         self.logger.info("Generating synthetic data...")
 
@@ -48,7 +49,7 @@ class Cleaner(BaseCleaner):
         return df
 
 
-    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray]:
+    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Cleaning data..."""
         cleaned = raw_data.copy()
 

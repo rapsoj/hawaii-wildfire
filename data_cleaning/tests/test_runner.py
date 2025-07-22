@@ -19,6 +19,7 @@ class TestRunner:
         self.logger = logging.getLogger(__name__)
         self.cleaner_dir = cleaner_dir
         self.standard_tests = self._discover_standard_tests()
+        self.spatial_array_tests = self._discover_spatial_array_tests()
         self.custom_tests = self._discover_custom_tests() if cleaner_dir else {}
 
     def _discover_standard_tests(self) -> Dict[str, Callable]:
@@ -44,6 +45,25 @@ class TestRunner:
 
             except Exception as e:
                 self.logger.error(f"Failed to load standard tests: {e}")
+
+        return tests
+
+    def _discover_spatial_array_tests(self) -> Dict[str, Callable]:
+        """Discover spatial array test functions"""
+        tests = {}
+        spatial_tests_file = Path("tests/spatial_array_tests.py")
+
+        if spatial_tests_file.exists():
+            try:
+                module = importlib.import_module("tests.spatial_array_tests")
+                for name, func in inspect.getmembers(module, inspect.isfunction):
+                    if name.startswith('test_'):
+                        tests[f"spatial.{name}"] = func
+                        self.logger.debug(f"Discovered spatial array test: {name}")
+            except Exception as e:
+                self.logger.error(f"Failed to load spatial array tests: {e}")
+        else:
+            self.logger.warning("No spatial_array_tests.py found in tests/")
 
         return tests
 
@@ -89,20 +109,19 @@ class TestRunner:
 
         return tests
 
-    def run_tests(self, df: pd.DataFrame, test_subset: List[str] = None,
-                  skip_custom: bool = False, skip_standard: bool = False) -> Dict[str, Any]:
-        """
-        Run tests on cleaned data
+    def run_tests(self, data: Any, test_subset: List[str] = None,
+                  skip_custom: bool = False, skip_standard: bool = False,
+                  cleaner: Any = None) -> Dict[str, Any]:
+        import numpy as np
+        import xarray as xr
+        import inspect
 
-        Args:
-            df: Cleaned DataFrame to test
-            test_subset: Optional list of specific tests to run
-            skip_custom: Skip custom tests from the cleaner
-            skip_standard: Skip standard tests
+        is_dataframe = isinstance(data, pd.DataFrame)
+        is_array_like = isinstance(data, (np.ndarray, xr.DataArray, xr.Dataset))
 
-        Returns:
-            Dictionary with test results
-        """
+        if not is_dataframe and not is_array_like:
+            raise TypeError(f"Unsupported data type: {type(data)}")
+
         results = {
             'passed': True,
             'total_tests': 0,
@@ -111,11 +130,17 @@ class TestRunner:
             'test_details': {}
         }
 
-        # Combine standard and custom tests based on flags
         all_tests = {}
 
-        if not skip_standard:
-            all_tests.update(self.standard_tests)
+        # Corrected logic here
+        if is_dataframe:
+            if not skip_standard:
+                all_tests.update(self.standard_tests)
+        elif is_array_like:
+            if not skip_standard:
+                all_tests.update(self.spatial_array_tests)
+        else:
+            self.logger.warning(f"Unknown data type for testing: {type(data)}")
 
         if not skip_custom:
             all_tests.update(self.custom_tests)
@@ -132,8 +157,16 @@ class TestRunner:
             results['total_tests'] += 1
 
             try:
-                # Call the test function with just the DataFrame
-                test_result = test_func(df)
+                # Dynamically check function parameters and pass accordingly
+                sig = inspect.signature(test_func)
+                kwargs = {}
+
+                if 'data' in sig.parameters:
+                    kwargs['data'] = data
+                if 'cleaner' in sig.parameters:
+                    kwargs['cleaner'] = cleaner
+
+                test_result = test_func(**kwargs)
 
                 # Process result
                 if isinstance(test_result, bool):

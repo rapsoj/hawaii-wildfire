@@ -106,27 +106,48 @@ class BaseCleaner(ABC):
         else:
             raise TypeError("clean_data must return a DataFrame when cleaning from path.")
 
-    def validate_output(self, df: pd.DataFrame) -> bool:
+    def validate_output(self, data) -> bool:
         """
         Custom validation for cleaned data.
         Override this to add specific validation rules.
 
         Args:
-            df: Cleaned DataFrame
+            data: Cleaned data (DataFrame, ndarray, or xarray.DataArray)
 
         Returns:
             bool: True if data passes validation, False otherwise
         """
-        # Basic validation
-        if df.empty:
-            self.logger.error("Cleaned dataframe is empty")
+        if data is None:
+            self.logger.error("Cleaned data is None")
             return False
 
-        if len(df.columns) == 0:
-            self.logger.error("Cleaned dataframe has no columns")
+        # DataFrame checks
+        if isinstance(data, pd.DataFrame):
+            if data.empty:
+                self.logger.error("Cleaned DataFrame is empty")
+                return False
+            if len(data.columns) == 0:
+                self.logger.error("Cleaned DataFrame has no columns")
+                return False
+
+        # NumPy ndarray checks
+        elif isinstance(data, np.ndarray):
+            if data.size == 0:
+                self.logger.error("Cleaned ndarray is empty")
+                return False
+
+        # xarray DataArray checks
+        elif isinstance(data, xr.DataArray):
+            if data.size == 0:
+                self.logger.error("Cleaned xarray.DataArray is empty")
+                return False
+
+        else:
+            self.logger.error(f"Unsupported data type for validation: {type(data)}")
             return False
 
         return True
+
 
     def get_capabilities(self) -> Dict[str, Any]:
         supported_formats = []

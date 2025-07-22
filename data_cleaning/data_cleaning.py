@@ -10,6 +10,7 @@ import pandas as pd
 import logging
 import traceback
 from typing import Optional, Dict, Any
+import xarray as xr
 import os
 
 # Import the test runner
@@ -133,34 +134,44 @@ class DataCleaningPipeline:
 
             if isinstance(data_ref, Path):
                 self.logger.info(f"Downloaded data to disk: {data_ref}")
-            elif isinstance(data_ref, (pd.DataFrame, np.ndarray)):
+            elif isinstance(data_ref, (pd.DataFrame, np.ndarray, xr.DataArray)):
                 self.logger.info("Downloaded data to memory")
             else:
                 raise TypeError("download_data() must return a DataFrame, ndarray, or Path")
 
             # Clean data
             self.logger.info("Cleaning data...")
-            cleaned_df = cleaner.clean_data(data_ref)
+            cleaned_data = cleaner.clean_data(data_ref)
 
-            if not isinstance(cleaned_df, (pd.DataFrame, np.ndarray)):
-                raise TypeError("clean_data() must return a DataFrame or ndarray")
+            # Validate cleaned data type
+            if not isinstance(cleaned_data, (pd.DataFrame, np.ndarray, xr.DataArray)):
+                raise TypeError("clean_data() must return a DataFrame, ndarray, or xarray.DataArray")
 
-            if isinstance(cleaned_df, np.ndarray):
-                cleaned_df = pd.DataFrame(cleaned_df)
-
-            self.logger.info(f"Cleaned {len(cleaned_df)} records with {len(cleaned_df.columns)} columns")
+            # Handle types specifically
+            if isinstance(cleaned_data, xr.DataArray):
+                # Keep as xarray.DataArray for spatial tests
+                pass
+            elif isinstance(cleaned_data, np.ndarray):
+                # Usually spatial data, keep as ndarray (no conversion)
+                pass
+            elif isinstance(cleaned_data, pd.DataFrame):
+                # DataFrame specific handling
+                self.logger.info(f"Cleaned {len(cleaned_data)} records with {len(cleaned_data.columns)} columns")
+            else:
+                # Should not happen due to previous check, but just in case
+                raise TypeError("clean_data() must return a DataFrame, ndarray, or xarray.DataArray")
 
             # Optional validation
             if hasattr(cleaner, 'validate_output'):
                 self.logger.info("Running custom validation...")
-                if not cleaner.validate_output(cleaned_df):
+                if not cleaner.validate_output(cleaned_data):
                     self.logger.error("Custom validation failed")
                     return None
 
             # Test suite
             if not skip_tests:
                 self.logger.info("Running validation tests...")
-                test_results = self.test_runner.run_tests(cleaned_df)
+                test_results = self.test_runner.run_tests(cleaned_data, cleaner=cleaner)
 
                 if not test_results['passed']:
                     self.logger.error(
@@ -176,23 +187,27 @@ class DataCleaningPipeline:
                         f"All tests passed! ({test_results['passed_tests']}/{test_results['total_tests']})"
                     )
 
-            # Save cleaned data
-            if output_dir is None:
-                output_dir = Path("data/cleaned") / self.cleaner_name
+            # Save cleaned data if it's a DataFrame
+            if isinstance(cleaned_data, pd.DataFrame):
+                if output_dir is None:
+                    output_dir = Path("data/cleaned") / self.cleaner_name
 
-            output_path = output_dir / "cleaned_data.csv"
-            output_path.parent.mkdir(parents=True, exist_ok=True)
+                output_path = output_dir / "cleaned_data.csv"
+                output_path.parent.mkdir(parents=True, exist_ok=True)
 
-            cleaned_df.to_csv(output_path, index=False)
-            self.logger.info(f"\nSaved cleaned data to: {output_path}")
-            self.logger.info(f"Shape: {cleaned_df.shape}")
+                cleaned_data.to_csv(output_path, index=False)
+                self.logger.info(f"\nSaved cleaned data to: {output_path}")
+                self.logger.info(f"Shape: {cleaned_data.shape}")
+            else:
+                self.logger.info("Cleaned data is not a DataFrame; skipping CSV save.")
 
-            return cleaned_df
+            return cleaned_data
 
         except Exception as e:
             self.logger.error(f"Error running cleaner: {e}")
             self.logger.error(traceback.format_exc())
             return None
+
 
     def test(self) -> Dict[str, Any]:
         """Run the cleaner and report test results"""

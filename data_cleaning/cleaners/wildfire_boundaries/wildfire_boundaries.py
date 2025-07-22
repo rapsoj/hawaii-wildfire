@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import xarray as xr
 import geopandas as gpd
 from typing import Dict, Any, Union
 
@@ -22,7 +23,7 @@ class Cleaner(BaseCleaner):
             'update_frequency': 'static'
         }
 
-    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray]:
+    def download_data(self, format: str = 'dataframe') -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Load fire data and return as DataFrame or NumPy array."""
         self.logger.info("Downloading fire boundary data...")
 
@@ -39,7 +40,7 @@ class Cleaner(BaseCleaner):
         else:
             raise ValueError(f"Unsupported format: {format}. Use 'dataframe' or 'array'.")
 
-    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray]:
+    def clean_data(self, raw_data: Union[pd.DataFrame, np.ndarray]) -> Union[pd.DataFrame, np.ndarray, xr.DataArray]:
         """Clean wildfire boundary data, supporting both DataFrame and array inputs."""
         if isinstance(raw_data, (pd.DataFrame, gpd.GeoDataFrame)):
             df = raw_data.copy()
