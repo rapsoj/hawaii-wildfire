@@ -28,13 +28,12 @@ class Cleaner(BaseCleaner):
         """Generate synthetic data and return it in the requested format"""
         self.logger.info("Generating synthetic data...")
 
-        SOURCE_URL = "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt"
-        FILE_PATH_PARTS = ("teleconnections", "oni.txt")
-        CURRENT_DIR = Path(__file__).parent
-        DATA_ROOT = CURRENT_DIR.parent / "data"
+        SOURCE_URL = "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt"        
+        CURRENT_DIR = Path(__file__).parent                   
+        DATA_ROOT = CURRENT_DIR.parent.parent / "data"           
         FOLDER_PATH = DATA_ROOT / "teleconnections"
         OUT_FILE = FOLDER_PATH / "oni.txt"
-        
+
         response = requests.get(SOURCE_URL)
         FOLDER_PATH.mkdir(parents=True, exist_ok=True)
 
