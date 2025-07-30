@@ -83,8 +83,8 @@ class Cleaner(BaseCleaner):
         new_files = self._scan_for_new_files(root_dir)
 
         if not new_files:
-            self.logger.info("No new files found - loading existing data")
-            return self._load_existing_data()
+            self.logger.info("No new files found - skipping cleaning")
+            return None
 
         self.logger.info(f"Processing {len(new_files)} new files...")
 
