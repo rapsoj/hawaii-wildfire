@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import logging
 import traceback
+import h5py
 from typing import Optional, Dict, Any
 import xarray as xr
 import os
@@ -187,19 +188,32 @@ class DataCleaningPipeline:
                         f"All tests passed! ({test_results['passed_tests']}/{test_results['total_tests']})"
                     )
 
-            # Save cleaned data if it's a DataFrame
+            # Save cleaned data as appropriate file type
+            output_dir = output_dir or Path("data/cleaned") / self.cleaner_name
+            output_dir.mkdir(parents=True, exist_ok=True)
+
             if isinstance(cleaned_data, pd.DataFrame):
-                if output_dir is None:
-                    output_dir = Path("data/cleaned") / self.cleaner_name
+                cleaned_data.to_csv(output_dir / "cleaned_data.csv", index=False)
+                self.logger.info(f"Saved cleaned DataFrame to: {output_dir / 'cleaned_data.csv'}")
 
-                output_path = output_dir / "cleaned_data.csv"
-                output_path.parent.mkdir(parents=True, exist_ok=True)
+            elif isinstance(cleaned_data, np.ndarray):
+                if cleaned_data.ndim >= 3:
+                    h5_path = output_dir / "cleaned_data.h5"
+                    with h5py.File(h5_path, 'w') as f:
+                        f.create_dataset("data", data=cleaned_data)
+                    self.logger.info(f"Saved cleaned ndarray (>=3D) to HDF5: {h5_path}")
+                else:
+                    npy_path = output_dir / "cleaned_data.npy"
+                    np.save(npy_path, cleaned_data)
+                    self.logger.info(f"Saved cleaned ndarray (<3D) to NumPy file: {npy_path}")
 
-                cleaned_data.to_csv(output_path, index=False)
-                self.logger.info(f"\nSaved cleaned data to: {output_path}")
-                self.logger.info(f"Shape: {cleaned_data.shape}")
+            elif isinstance(cleaned_data, xr.DataArray):
+                nc_path = output_dir / "cleaned_data.nc"
+                cleaned_data.to_netcdf(nc_path)
+                self.logger.info(f"Saved cleaned xarray.DataArray to NetCDF: {nc_path}")
+
             else:
-                self.logger.info("Cleaned data is not a DataFrame; skipping CSV save.")
+                self.logger.warning("Unsupported data type; nothing saved.")
 
             return cleaned_data
 

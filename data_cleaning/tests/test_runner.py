@@ -157,30 +157,31 @@ class TestRunner:
             results['total_tests'] += 1
 
             try:
-                # Dynamically check function parameters and pass accordingly
                 sig = inspect.signature(test_func)
                 kwargs = {}
 
-                if 'data' in sig.parameters:
+                param_names = sig.parameters.keys()
+                if 'data' in param_names:
                     kwargs['data'] = data
-                if 'cleaner' in sig.parameters:
+                elif 'df' in param_names:
+                    kwargs['df'] = data
+
+                if 'cleaner' in param_names:
                     kwargs['cleaner'] = cleaner
 
+                #  Run the test
                 test_result = test_func(**kwargs)
 
-                # Process result
+                #  Process the result
                 if isinstance(test_result, bool):
-                    # Simple pass/fail
                     passed = test_result
                     message = "Passed" if passed else "Failed"
                     details = {}
                 elif isinstance(test_result, dict):
-                    # Detailed result
                     passed = test_result.get('passed', False)
                     message = test_result.get('message', '')
                     details = test_result.get('details', {})
                 else:
-                    # Invalid return type
                     passed = False
                     message = f"Invalid test return type: {type(test_result)}"
                     details = {}
