@@ -5,3 +5,6 @@ rasterio
 scipy
 rioxarray
 requests
+h5py
+xarray
+typing
