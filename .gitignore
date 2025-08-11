@@ -1,2 +1,5 @@
 .DS_Store
 .venv
+.pyc
+
+data/gdf_final.csv
